@@ -1,0 +1,47 @@
+/*.typed-cursor{
+  display: none !important;
+}*/
+
+.typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 1s steps(1) infinite !important;
+}
+
+.editor >.ck.ck-editor .ck.ck-content{
+  height:300px;
+}
+
+.editor >.ck.ck-editor{
+  width: 100% !important;
+}
+
+.css-3iigni-container{
+  width: calc(30% + 100px);
+}
+
+#effect p{
+  /*animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: move 1s ease-in infinite;*/
+}
+
+
+/*.blinker:after {
+    font-size: 20px;
+    content: '|';
+    color: white;
+    display: inline-block;
+    animation: blink 1s steps(2) infinite ;
+    position: relative;
+  }*/
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .css-b62m3t-container{
+    width: 75%;
+  }

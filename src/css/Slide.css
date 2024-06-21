@@ -1,0 +1,39 @@
+.textbox{
+    width: 20%;
+    max-width: 150px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;/*這個會影響到美觀*/
+    justify-content: space-between;
+}
+
+.slick-slide > div{
+    justify-content: center;
+    display: flex;
+    
+}
+
+.slick-list{
+    overflow-x: hidden;
+}
+
+.slick-dots{
+    display: none !important;
+}
+
+.slick-arrow.slick-prev,.slick-arrow.slick-next{
+    display: none !important;
+}
+
+.slick-slider{
+    width: 96%;
+    display: flex;
+    justify-content: center;
+}

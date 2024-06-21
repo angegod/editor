@@ -1,0 +1,135 @@
+.ParView{
+    width: 60%;
+    background-color:gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.content p{
+    color: white;
+}
+
+.ParDetails{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.ParDetails span{
+    font-weight: bold;
+}
+
+.MoreParSection{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.MorePar{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    transition: right 0.5s ease-in-out;
+    right: 0%;
+}
+.ParBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: calc(20%);
+    aspect-ratio: 1/1;
+    padding: 10px;
+    
+}
+
+.ParBox .inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ParBox .inner img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 150px;
+   
+}
+
+/*comment section*/
+div.InputComment{
+    margin-bottom: 10px;
+}
+
+textarea.InputComment{
+    resize: vertical;
+    width: 70%;
+    max-height: 100px;
+    min-height: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label.author{
+    color: brown;
+}
+
+/*comment others section*/
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment:hover{
+    background-color: rgb(176, 176, 176);
+}
+
+.comment .details{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.moreCommentBtn{
+    width: 70px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;    
+    text-align: center;
+}
+
+.moreCommentBtn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: #000;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0);
+}
+
+.moreCommentBtn:hover::after{
+    transform: scale(1);
+}
+
+/*btn css(edit and delete)*/
+

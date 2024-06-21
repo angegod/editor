@@ -1,0 +1,57 @@
+.ck.ck-editor{
+  width: 60% !important;
+}
+
+.ck.ck-content{
+  height: 500px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  background-color: #353131 !important;
+  color: white;
+}
+
+.ck-blurred{
+  min-height: 300px !important;
+}
+
+.main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+.button,.recordTotal{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.App{
+  padding-top: 20px;
+  width: 80%;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.recordDetails{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+}
+.recordDetails div{
+  margin-right: 20px;
+}
+.title input{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.hint{
+  margin-top: 10px;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: red;
+}

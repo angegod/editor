@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+span{
+    color: white;
+}
+.parDetails{
+    width:500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.parDetails:nth-child(2n){
+    background-color: gray;
+}
+.parDetails:nth-child(2n-1){
+    background-color: rgb(63, 63, 63);
+}
+
+.searchTotal{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+.searchInput{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.searchTotal div{
+    align-items: center;
+}
+
+.pagescount{
+    min-width: 200px;
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.pagescount div button{
+    width: 60px;
+    background-color: rgb(64, 131, 240);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.pagescount div button:hover{
+    background-color: rgb(64, 64, 248);
+}
+
+.pagescount div button:disabled{
+    /*background-color: rgb(110, 97, 97);*/
+    display: none;
+}
+
+/*slider*/
+.slick-track{
+    display: flex;
+    flex-direction: row;
+    
+}

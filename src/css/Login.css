@@ -1,0 +1,50 @@
+.LoginSection{
+    width: 100%;
+    height: 93vh;
+    background-image: url("../image/LoginBg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Login{
+   
+    width: 30%;
+    height: 500px;
+    background-color: white;
+    margin-right: 20%;
+    border-radius: 10px;
+        
+}
+
+.Login input{
+    border: 0px;
+}
+
+.Login input:focus{
+    outline: 0px;
+    border-bottom: 2px solid black;
+}
+
+
+.form{
+    position: relative;
+    top: 10%;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form .input{
+    display: flex;
+    flex-direction: column;
+}
+
+.form .submit{
+    display: flex;
+    margin-right: 10px;
+    justify-content: flex-end;
+}
