@@ -12,7 +12,7 @@ function Login(){
         };
 
         //回傳建議必須要包含帳號ID
-        axios.post("http://192.168.0.64:5000/sql/login", json).then((response) => {
+        axios.post("https://192.168.0.64:5000/sql/login", json).then((response) => {
             if(response.data!==null){
                 alert("歡迎回來,"+response.data.accName);
                 localStorage.setItem("LoginUserId",response.data.accId);
