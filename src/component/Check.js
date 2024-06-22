@@ -2,17 +2,23 @@ import React, { useRef } from 'react';
 import { useEffect,useState } from 'react';
 import axios from 'axios';
 import '../css/check.css';
-import {Link} from 'react-router-dom';
-
-
+import {Link, useNavigate} from 'react-router-dom';
 
 function Check(){
-    
+    const navigate=useNavigate();    
     const [parTotal,setParTotal]=useState([]);
     const pageNumber=useRef(1);//預設搜尋結果頁數為第一頁 顯示目前所在頁數
     const pageCount=useRef(5);
     const MaxPageNumber=useRef(1);
     const [searchText,setSearchText]=useState("");
+
+    useEffect(()=>{
+        if(localStorage.getItem("LoginUserName")===null||localStorage.getItem("LoginUserId")===null){
+            navigate('/Login');//如果沒有登入資訊，則直接跳回登入頁面
+        }
+    },[])
+    
+    
     
     //改由按鈕觸發
     function getData(){

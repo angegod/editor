@@ -3,6 +3,7 @@ import './css/App.css';
 import axios from "axios";
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import {CKEditor} from '@ckeditor/ckeditor5-react';
+import { useNavigate } from 'react-router-dom';
 
 
 function App(){
@@ -11,25 +12,11 @@ function App(){
     const [parTitle,setParTitle]=useState("");
     const [hint,setHint]=useState("");
     const user=localStorage.getItem("LoginUserId");
-    
-    useEffect(()=>{
-        //console.log(document.querySelector(".ck.ck-content").querySelectorAll("p"));
-        //新增腳色歸屬
-        /*if(document.querySelector(".ck.ck-content")!==null){
-            document.querySelector(".ck.ck-content").querySelectorAll("p").forEach(p=>{
-                p.oncontextmenu=()=>{
-                    let person=prompt("請輸入腳色台詞歸屬:","");
-                    if(person!==null){
-                        //加入台詞歸屬
-                        p.dataset.sayby=person;
-                    }
-                }
-            })
-        }*/
-    },[])
-
-    
-
+    const navigate=useNavigate();
+       
+    if(localStorage.getItem("LoginUserName")===null||localStorage.getItem("LoginUserId")===null){
+        navigate('/Login');//如果沒有登入資訊，則直接跳回登入頁面
+    }
 
     function btnClickHandle(){
             const current=new Date();

@@ -5,7 +5,7 @@ function Logout(){
     useEffect(()=>{
         localStorage.clear();
         alert("已登出");
-        window.location.href="http://localhost:3000/editor/Login";
+        window.location.href=`${window.location.origin}/editor/Login`;
     },[]);
     
     

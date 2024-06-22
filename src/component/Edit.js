@@ -4,15 +4,16 @@ import '../css/App.css';
 import axios from "axios";
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import {CKEditor} from '@ckeditor/ckeditor5-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function Edit(){
+    const navigate=useNavigate();
     const location=useLocation();
-    const {id,author}=location.state;
+    const [id,setId]=useState(null);
+    const [author,setAuthor]=useState(null);
     const [parTitle,setParTitle]=useState("");
     const [hint,setHint]=useState("");
-    
     const [parData,setParData]=useState();
     const [parContent,setParContent]=useState("");
     const [parDate,setParDate]=useState("");
@@ -20,14 +21,23 @@ function Edit(){
     
 
     useEffect(()=>{
+        
+        if(localStorage.getItem("LoginUserName")===null||localStorage.getItem("LoginUserId")===null)//如果沒有登入資訊
+            navigate('/Login');
+
+        if(location.state===null)//如果沒有文章資訊 則跳回檢視頁面
+            navigate('/Check');
 
         //如果該登入作者不是該文章之使用者
         if(user!==author){
             alert("你無權進行操作，即將返回文章列表");
-            window.location.href="http://localhost:3000/editor/Check";
+            navigate('/Check');
             return;
         }
+        //確認沒有問題再進行初始化
 
+        setId(location.state.id);
+        setAuthor(location.state.author);
         const search={
             id:id,
             author:author,

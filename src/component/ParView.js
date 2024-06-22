@@ -33,7 +33,7 @@ function ParView(){
             commentNum:commentNum
         }
     
-        axios.post("http://192.168.0.64:5000/par/search", search).then((response) => {
+        axios.post("http://localhost:5000/par/search", search).then((response) => {
             if(response.data.length===0){
                 console.log('No data Found');
             }else{
@@ -93,7 +93,7 @@ function ParView(){
         };
 
 
-        axios.post("http://192.168.0.64:5000/par/deleteComment", json).then((response) => {
+        axios.post("http://localhost:5000/par/deleteComment", json).then((response) => {
             if(response.data.length===0){
                 console.log('No data Found');
                 return;
@@ -123,7 +123,7 @@ function ParView(){
         console.log(json);
 
         //儲存留言資訊並重新拿回目前所展示的留言資訊
-        axios.post("http://192.168.0.64:5000/par/pushComment", json).then((response) => {
+        axios.post("http://localhost:5000/par/pushComment", json).then((response) => {
             if(response.data.length===0){
                 console.log('No data Found');
             }else{
@@ -167,10 +167,10 @@ function ParView(){
             return
         };
         
-        axios.post("http://192.168.0.64:5000/par/delete", json).then((response) => {
+        axios.post("http://localhost:5000/par/delete", json).then((response) => {
             if(response.data==="Ok200"){
                 alert("文章已刪除");
-                window.location.href="http://192.168.0.64:3000/editor/Check";
+                window.location.href="http://localhost:3000/editor/Check";
             }else{
                 alert("發生系統性錯誤，請稍後再試");
             }    
@@ -192,7 +192,7 @@ function ParView(){
             }
             console.log(json);
     
-            axios.post("http://192.168.0.64:5000/par/getComment", json).then((response) => {
+            axios.post("http://localhost:5000/par/getComment", json).then((response) => {
                 if(response.data.length===0){
                     console.log('No data Found');
                 }else{

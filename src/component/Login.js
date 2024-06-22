@@ -12,12 +12,12 @@ function Login(){
         };
 
         //回傳建議必須要包含帳號ID
-        axios.post("https://192.168.0.64:5000/sql/login", json).then((response) => {
+        axios.post("http://localhost:5000/sql/login", json).then((response) => {
             if(response.data!==null){
                 alert("歡迎回來,"+response.data.accName);
                 localStorage.setItem("LoginUserId",response.data.accId);
                 localStorage.setItem("LoginUserName",response.data.accName);
-                window.location.href="http://localhost:3000/editor/Check";
+                window.location.href=`${window.location.origin}/editor/Check`
             }else{
                 alert("帳號或密碼輸入有誤");
             }
