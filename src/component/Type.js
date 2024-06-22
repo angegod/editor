@@ -322,13 +322,13 @@ const Test=React.memo(()=>{
             if(parContent.length===i+1){
                 if(searchP.dataset.char==='旁白'){
                     list.push(<>
-                        <div class='blinker flex hover:bg-slate-400' onClick={()=>EditContent(i)}>
+                        <div class='blinker flex hover:bg-slate-400 [&>span:nth-child(2)]:break-all' onClick={()=>EditContent(i)}>
                             <ReactTyped strings={[p.content]} typeSpeed={50}/>
                         </div>
                     </>);
                 }else{
                     list.push(<>
-                        <div class='blinker flex hover:bg-slate-400' onClick={()=>EditContent(i)}>
+                        <div class='blinker flex hover:bg-slate-400 [&>span:nth-child(2)]:break-all' onClick={()=>EditContent(i)}>
                             <span className='font-bold break-keep' style={{color:`${colors}`}} data-char={characters}>{(characters==='unknown')?'???':characters}:</span>
                             <ReactTyped strings={[p.content]} typeSpeed={50}/>
                         </div>
@@ -338,12 +338,12 @@ const Test=React.memo(()=>{
                 if(searchP.dataset.char==='旁白'){//旁白
                     console.log('旁白');
                     list.push(<>
-                        <div className='text-white hover:bg-slate-400' dangerouslySetInnerHTML={{__html:searchP.outerHTML}} onClick={()=>EditContent(i)}></div>
+                        <div className='text-white hover:bg-slate-400 [&>p]:break-all' dangerouslySetInnerHTML={{__html:searchP.outerHTML}} onClick={()=>EditContent(i)}></div>
                     </>)                    
                 }else{
                     let content=`<span style="color:${colors}"  data-char=${characters}>${(characters==='unknown')?'???':characters}</span>:`+searchP.outerHTML;
                     list.push(<>
-                        <div className='text-white flex [&>span]:font-bold [&>span]:break-keep hover:bg-slate-400' dangerouslySetInnerHTML={{__html:content}} onClick={()=>EditContent(i)}></div>
+                        <div className='text-white flex [&>span]:font-bold [&>span]:break-keep [&>p]:break-all hover:bg-slate-400' dangerouslySetInnerHTML={{__html:content}} onClick={()=>EditContent(i)}></div>
                     </>)
                 }
             }
